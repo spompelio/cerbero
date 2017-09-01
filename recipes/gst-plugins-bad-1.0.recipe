@@ -16,7 +16,8 @@ class Recipe(custom.GStreamer):
         --disable-pvr --disable-sdl --disable-sndfile \
         --disable-teletextdec --disable-timidity \
         --disable-vdpau --disable-voamrwbenc --disable-wildmidi \
-        --disable-xvid --disable-zbar --disable-sdi --disable-qt'
+        --disable-xvid --disable-zbar --disable-sdi --enable-qt \
+        --with-pkg-config-path=~/programming/cerbero/build/sources/darwin_x86_64/gstreamer-1.0-1.13.0.1/pkgconfig:~/programming/cerbero/build/sources/darwin_x86_64/gst-plugins-base-1.0-1.13.0.1/pkgconfig:~/Qt/qt-everywhere-opensource-src-5.9.1/qtbase/lib/pkgconfig'
     # Explicitly enable plugins
     configure_options += ' --enable-bz2 --enable-assrender \
         --enable-faad --enable-kate --enable-openh264 --enable-opus \
@@ -94,6 +95,7 @@ class Recipe(custom.GStreamer):
              'lib/gstreamer-1.0/libgstcompositor%(mext)s',
              'lib/gstreamer-1.0/libgstwebrtcdsp%(mext)s',
              'lib/gstreamer-1.0/libgstladspa%(mext)s',
+             'lib/gstreamer-1.0/libgstqmlgl%(mext)s',
     ]
 
     files_plugins_effects_devel = [
@@ -123,6 +125,7 @@ class Recipe(custom.GStreamer):
              'lib/gstreamer-1.0/libgstcompositor.a', 'lib/gstreamer-1.0/libgstcompositor.la',
              'lib/gstreamer-1.0/libgstwebrtcdsp.a', 'lib/gstreamer-1.0/libgstwebrtcdsp.la',
              'lib/gstreamer-1.0/libgstladspa.a', 'lib/gstreamer-1.0/libgstladspa.la',
+             'lib/gstreamer-1.0/libgstqmlgl.a', 'lib/gstreamer-1.0/libgstqmlgl.la',
     ]
 
     files_plugins_codecs = [
